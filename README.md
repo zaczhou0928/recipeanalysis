@@ -1,6 +1,4 @@
 # Recipe and Rating Data Analysis Project
-
-# Recipe and Rating Data Analysis Project
 by Qianjin Zhou and Haohan Zou
 
 # Introduction
