@@ -1,18 +1,9 @@
-# recipeanalysis
+# Recipe and Rating Data Analysis Project
 
----
-layout: page
-title: Project 3
-description: Description of Project 3.
-nav_exclude: true
----
+# Recipe and Rating Data Analysis Project
+by Qianjin Zhou and Haohan Zou
 
-<script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-# Project 3 – Exploratory Data Analysis 📊
-{:.no_toc}
-
-### Due Date: Thursday, May 18th at 11:59PM (No Checkpoint!)
+# Introduction
 {:.no_toc}
 
 ## Table of Contents
