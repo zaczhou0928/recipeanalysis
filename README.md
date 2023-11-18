@@ -244,36 +244,46 @@ After performing the k-s test, we found the p-value is approximately equal to 0.
 
 # Hypothesis Testing
 
-The question we would like to address is:
+**Background Info:** Normally, when people consume high calories foods, usually foods contain high percentage of fat, people are able to receive satisfication and enjoyment more easily, as a result, more likely to give positive feedback to this kind fo food. Thus, in this dataset, since we have information about both the calorie values and people's satification to certain recipe (represented as numerical rating), we would like to explore if there's any connection between this two variables.
 
-**<code style="color : green"> From this dataframe, can we conclude a relationship, specifically linearly relationship, between the variable ratings and variable calories.</code>**
 
-Before we conduct the experiment, we will first drop the rows that containing null values in **rating** column.
+The question we would like to address through hypothesis test is: 
+**<code style="color : green"> For recipes with valid ratings (ie: rating does not equal to 0), is there a significant linearly relationship between the variable ratings and variable calories.</code>**
+
 
 ## Null Hypothesis:
 
-Our research question led us to the hypothesis that:
+Our research question led us to the Null Hypothesis:
 **There doesn't exists a linear relationship between variable 'rating' and variable 'calories'.**
 
 ### Alternative Hypothesis
-**There exists a linear relationship between variable 'rating' and variable 'calories'.**
+
+The Alternative Hypothesis is: **There exists a significant linear relationship between variable 'rating' and variable 'calories'.**
+
+**Before Hypothesis Test:** As mentioned in the above sections, some of them recipes has 0 ratings, and we have already explained that this 0 ratings are not caused by the bad performance of recipes themselves. Thus, before the test, we will first drop rows of recipes whose ratings are zero.
 
 
 ### Test Statistic
 
-Our choice of test statistic is correlation coefficient between variable **rating** and variable **calories** since correlation coefficient measures the strength of linear relationship between two variables.
+Our choice of test statistic is the correlation coefficient between variable **rating** and variable **calories** since correlation coefficient measures the strength of linear relationship between two variables.
 
 ### Significance Level
 We set $\alpha$ = 0.05
 
 ### P-values
-From our experiment, the p_value we received is around 0.078, which is greater than our significance level $\alpha$ = 0.05
+From our experiment, the p_value we received is around 0.078, which is greater than our significance level $\alpha$ = 0.05.
 
 <iframe src="assests/hypothesis_test.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Justification
-In the hypothesis, we randomly shuffled the values in calories columns in order to do a permutation test. Each time, after we permuated the values of calories, we use 'corr' function from panda to calculate the correlation coefficient between variable ratings and variable calories. After iterating same procedures for 10000 times, we calculate the p_value stated above, and our experiment result fails to reject our null hypothesis.
+In the hypothesis, we randomly shuffled the values in calories columns in order to do a permutation test to simulate the scenario that ratings and calories are matched randomly. Each time, after we permuated the values of calories, we use **'corr'** function from panda to calculate the correlation coefficient between variable ratings and variable calories. After iterating same procedures for 10000 times, we calculate the p_value stated above, and our experiment result fails to reject our null hypothesis.
+
+As our observed statistics is not significantly far away from our test statistics, which is the correlation coefficent of ratings and calories after calores are randomly shuffled, we can conclude that there doesn't exist a significant linear relationship between ratings and calories. There are two possible explanations for this result:
+
+* First, the relationship between ratings and calories might in other forms, for example, quadratic relation, logarithmic relation. Since at here we only examine the possibility of linear relationships, so it's possible for us to fail to reject null hypothesis.
+
+* In addition, we may explain this test result as people who ratings these recipes might have many other consideration, rather than mostly caring about the taste or satisfication of the recipe. They might consider the complexity, healthy, and many other factors when giving the ratings to the recipes.
 
 ### Conclusion
 
-From our experiment, we can see that we fail to reject the null hypothesis that there does not exist a linear relationship between variable ratings and variable calories.
+As for the conclusion, we can state that we fail to reject the hypothesis there doesn't exist a linear relationship between **rating** and **calories** given the fact that the p value we received exceeds the significane level we set.
