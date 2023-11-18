@@ -104,7 +104,7 @@ After merging, **'recipe_id'** and **'id'** are duplicated, therefore we drop th
 
 **'nutrition'** column is also dropped because it is no longer needed as we have extracted out each individual value and formed new columns.
 
-Finally we dropped other columns, **'name', 'contributor_id', 'submitted', 'tags', and 'steps'** that are irrelevant for our analysis.
+Finally we dropped other columns, **'name', 'contributor_id', 'submitted', 'tags', ‘description’, and 'steps'** that are irrelevant for our analysis.
 
 ### Cleaning Outliers
 
@@ -118,7 +118,6 @@ We found that there are some recipes containing significantly unusual values for
 | minutes        | int64  |
 | n_steps        | int64  |
 | steps          | object |
-| description    | object |
 | ingredients    | object |
 | n_ingredients  | int64  |
 | rating         | float64|
