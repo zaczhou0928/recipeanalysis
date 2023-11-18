@@ -262,7 +262,7 @@ After performing the k-s test, we found the p-value is approximately equal to 0.
 
 # Hypothesis Testing
 
-**Background Info:** Normally, when people consume high calories foods, usually foods contain high percentage of fat, people are able to receive satisfication and enjoyment more easily, as a result, more likely to give positive feedback to this kind fo food. Thus, in this dataset, since we have information about both the calorie values and people's satification to certain recipe (represented as numerical rating), we would like to explore if there's any connection between this two variables.
+**Background Info:** Normally, when people consume high calories foods, usually foods contain high percentage of fat, people are able to receive satisfication and enjoyment more easily, as a result, more likely to give positive feedback to this kind of food. Thus, in this dataset, since we have information about both the calorie values and people's satification to certain recipe (represented as numerical rating), we would like to explore if there's any connection between this two variables.
 
 
 The question we would like to address through hypothesis test is: 
