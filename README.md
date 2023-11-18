@@ -124,17 +124,18 @@ We found that there are some recipes containing significantly unusual values(mor
 
 ## Univariate Analysis:
 
-### We examined the distribution of calories:
+### Ddistribution of calories:
 
-From the graph, we can conclude that the distribution of calories follows Gaussian distribution and is skewed right. We also conclude that the distribution centers around 300-400 calories, and most data is distributed in the range [0,1000]. Hence, we can say that most of the recipes contain less than or equal to 1000 calories.
+We first examined the distribution of calories. From the graph, we can conclude that the distribution of calories follows Gaussian distribution and is skewed right. We also conclude that the distribution centers around 300-400 calories, and most data is distributed in the range [0,1000]. Hence, we can say that most of the recipes contain less than or equal to 1000 calories.
 
-<iframe src="assests/histgram_avg_rating.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assests/histgram_calories.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Distribution of Rating
 
 We also looked at the distribution of ratings, and found that ratings are concentrated between the range from (4 to 5), indicating that the average ratings of most recipes are very high.
 
-<iframe src="assests/histgram_calories.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assests/histgram_avg_rating.html" width=800 height=600 frameBorder=0></iframe>
+
 
 ## Bivariate Analysis:
 
