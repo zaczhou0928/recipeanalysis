@@ -4,7 +4,7 @@ by Qianjin Zhou and Haohan Zou
 # Introduction
 Welcome to our exploration of food recipes and ratings, a fascinating collection of data that delves into the world of delicious food. Inspired by the relationship between user satisfaction and the nutrition factors of recipes, we have dived deep into the datasets and developed our research question on:
 
-<code style="color : ">What is the relationship between the amount of calories and average rating of recipes?</code>
+<code style="color : Yellowgreen">What is the relationship between the amount of calories and average rating of recipes?</code>
 
 Investigating this question can give us an idea regarding the impact of the amount of calories on peoples’ enjoyment of the food. By identifying a potential relationship between calories and rating for a recipe, we can possibly help food recipe creators, chefs, restaurant owners, etc. to make food that is more appealing and satisfactory.
 
@@ -172,7 +172,7 @@ We performed aggregate analysis to investigate the relationship between number o
 The columns categorize recipes based on the number of ingredients: fewer than 10, 10-20, 20-30, and 30 or more.
 The rows categorize recipes based on the number of steps in the recipe: fewer than 20, 20-40, 40-60, and 60 or more.
 
-| n_steps   |     <10 |   10-20 |    20-30 |   >=30 |
+| n_steps/n_ingredients   |     <10 |   10-20 |    20-30 |   >=30 |
 |:----------|--------:|--------:|---------:|-------:|
 | <20       | 372.507 | 477.626 |  617.7   | 518.55 |
 | 20-40     | 515.642 | 624.954 |  720.486 | 820.6  |
@@ -210,7 +210,7 @@ Alternative hypothesis: the distribution of the calories when average rating is 
 Observed Statistics: we choose k-s as our test statistic.
 
 
-### Distribution of Column ‘calories’ when Column ‘average rating’ is Missing and not Missing
+Distribution of Column ‘calories’ when Column ‘average rating’ is Missing and not Missing
 
 <iframe src="assests/missingness1.html" width=800 height=600 frameBorder=0></iframe>
 
@@ -245,7 +245,7 @@ After performing the k-s test, we found the p-value is approximately equal to 0.
 
 The question we would like to address is:
 
-What is the relationship between the amount of calories and average rating of recipes?
+<code style="color : Yellowgreen">What is the relationship between the amount of calories and average rating of recipes?</code>
 
 
 ## Null Hypothesis:
