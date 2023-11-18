@@ -291,7 +291,7 @@ We set alpha = 0.05
 ### P-values
 From our experiment, the p_value we received is around 0.078, which is greater than our significance level alpha = 0.05.
 
-<iframe src="assests/hypothesis_test.html" width=800 height=600 frameBorder=0></iframe>
+
 
 ### Justification
 In the hypothesis, we randomly shuffled the values in calories columns in order to do a permutation test to simulate the scenario that ratings and calories are matched randomly. Each time, after we permuated the values of calories, we use **'corr'** function from panda to calculate the correlation coefficient between variable ratings and variable calories. After iterating same procedures for 10000 times, we calculate the p_value stated above, and our experiment result fails to reject our null hypothesis.
