@@ -21,9 +21,9 @@ After merging and cleaning, the dataset we will primarily use for the course of 
 3. **nutrition:** Nutrition information in the form **[calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]**. PDV stands for “percentage of daily value” (For easier access to the data, we have splitted the data and created a column for each nutritional value, and we will mainly focus on the calories column.) 
 
 4. **n_steps:** number of steps in recipe
-‘n_ingredients’: number of ingredients in recipe
+5. **‘n_ingredients’:** number of ingredients in recipe
 
-In the following parts, we will show the sections of Data Cleaning and EDA (Exploratory Data Analysis), Assessment of Missingness, and Hypothesis Testing.
+In the following parts, we will show the sections of **Data Cleaning and EDA (Exploratory Data Analysis)**, **Assessment of Missingness**, and **Hypothesis Testing**.
 
 
 # Data Cleaning and EDA
@@ -71,7 +71,7 @@ We also look at the data type of each column from the ratings dataset.
 We left merged the recipes and ratings dataset together and filled all ratings of 0 in the rating dataset with np.nan. 
 
 
-Filling is a necessary step because through observing the website, we found that the minimum value for rating is 1. In this way, we recognized that 0 does not mean numerically a rating of 0 but that the reviewer simply didn’t provide a rating. Therefore, dropping those ratings of 0 can help us accurately calculate the average rating for each recipe in the later cleaning process.
+Filling np.nan is a necessary step because through observing the website, we found that the minimum value for rating is 1. In this way, we recognized that 0 does not mean numerically a rating of 0 but that the reviewer simply didn’t provide a rating. Therefore, dropping those ratings of 0 can help us accurately calculate the average rating for each recipe in the later cleaning process.
 
 Then, we calculated the average rating for each recipe and assigned a new column to the original recipe dataset, called **rating**.
 
@@ -100,15 +100,15 @@ We find that the nutrition column contains several nutritional values in the for
 
 ### Dropping Columns
 
-After merging, **'recipe_id'** and **'id'** are duplicated, therefore we drop the ‘recipe_id’ column.
+After merging, **'recipe_id'** and **'id'** are duplicated, therefore we drop the **‘recipe_id’** column.
 
-Nutrition column is also dropped because it is no longer needed as we have extracted out each individual value and formed new columns.
+**'nutrition'** column is also dropped because it is no longer needed as we have extracted out each individual value and formed new columns.
 
-Finally we dropped other columns, **'name', 'contributor_id', 'submitted', 'tags', 'describtion', and 'steps'** that are irrelevant for our analysis.
+Finally we dropped other columns, **'name', 'contributor_id', 'submitted', 'tags', and 'steps'** that are irrelevant for our analysis.
 
 ### Cleaning Outliers
 
-We found that there are some recipes containing significantly unusual values for the amount of calories and sodiums (Eg: more than 10,000 calories). Therefore, we drop the outliers (calories data that is greater than the **99.9 percentiles**) in calories.
+We found that there are some recipes containing significantly unusual values for the amount of calories and sodiums (E.g.: some recipes contain more than 10,000 in calories and some contain more than 1000 in sodium). Therefore, we drop the outliers (calories data and sodium data that is greater than the **99.9 percentiles**).
 
 ### Cleaning Result
 
