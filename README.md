@@ -55,7 +55,7 @@ After merging, ‘recipe_id’ and ‘id’ are duplicated, therefore we drop th
 
 Nutrition column is also dropped because it is no longer needed as we have extracted out each individual value and formed new columns.
 
-Finally we dropped other columns, 'name', 'contributor_id', 'submitted', 'tags', 'description', that are irrelevant for our analysis.
+Finally we dropped other columns, 'name', 'contributor_id', 'submitted', 'tags', that are irrelevant for our analysis.
 
 ### Cleaning Outliers
 
