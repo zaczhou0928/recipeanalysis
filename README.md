@@ -6,7 +6,7 @@ Welcome to our exploration of food recipes and ratings, a fascinating collection
 
 What is the relationship between the amount of calories and average rating of recipes?
 
-Investing this question can give us an idea regarding the impact of the amount of calories on peoples’ enjoyment of the food. By identifying a potential relationship between calories and rating for a recipe, we can possibly help food recipe creators, chefs, restaurant owners, etc. to make food that is more appealing and satisfactory.
+Investigating this question can give us an idea regarding the impact of the amount of calories on peoples’ enjoyment of the food. By identifying a potential relationship between calories and rating for a recipe, we can possibly help food recipe creators, chefs, restaurant owners, etc. to make food that is more appealing and satisfactory.
 
 The data we are using is sourced from food.com, a website of user community that thrives in authentic food recipes that are shared by food enthusiasts all around the world. 
 
