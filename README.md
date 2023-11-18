@@ -175,10 +175,10 @@ The rows categorize recipes based on the number of steps in the recipe: fewer th
 
 | n_steps/n_ingredients   |     <10 |   10-20 |    20-30 |   >=30 |
 |:----------|--------:|--------:|---------:|-------:|
-| <20       | 372.507 | 477.626 |  617.7   | 518.55 |
-| 20-40     | 515.642 | 624.954 |  720.486 | 820.6  |
-| 40-60     | 623.556 | 645.468 |  916.36  | nan    |
-| >=60      | 821.236 | 880.5   | 1699.82  | nan    |
+| **<20**   | 372.507 | 477.626 |  617.7   | 518.55 |
+| **20-40** | 515.642 | 624.954 |  720.486 | 820.6  |
+| **40-60** | 623.556 | 645.468 |  916.36  | nan    |
+| **>=60**  | 821.236 | 880.5   | 1699.82  | nan    |
 
 ## Observations
 
@@ -196,11 +196,11 @@ Overall, this table suggests that there may be a general trend where recipes wit
 
 ## NMAR Analysis:
 
-In our dataframe, we observed that some recipes do not have descriptions, and we believe that the missingness of “description” is NMAR. This is because we believe that those recipes that are self-explanatory and require little amount of descriptions might end up not having descriptions at all. To explain the missingness, we could possibly obtain information on user demographics. For example, if we could collect the recipe creator’s age, we might be able to conclude that older creators don’t like to write descriptions.
+In our dataframe, we observed that some recipes do not have ratings, and we believe that the missingness of “rating” is NMAR. This is because we believe that those recipes are just published so that no users have already tried it, thus there's no ratings about those recipes. To explain the missingness, we could possibly obtain information on user demographics. For example, if we could collect the the date of publication of those recipes, we might be able to conclude that new recipes are more likely to miss ratings from users.
 
 ## Missingness Dependency:
 
-Now, we will assess the missingness of ‘average rating’ in our dataframe. We will test the dependency of the missingness of ‘average rating’ on ‘calories’ and ‘sodium’.
+Now, we will assess the missingness of **‘average rating’** in our dataframe. We will test the dependency of the missingness of **‘average rating’** on **‘calories’ and ‘sodium’**.
 
 ## Calories and Rating
 
@@ -208,10 +208,10 @@ Null hypothesis: the distribution of the calories when average rating is missing
 
 Alternative hypothesis: the distribution of the calories when average rating is missing is different from the distribution of the calories when average rating is not missing 
 
-Observed Statistics: we choose k-s as our test statistic.
+Observed Statistics: we choose **k-s** as our test statistic.
 
 
-Distribution of Column ‘calories’ when Column ‘average rating’ is Missing and not Missing
+**<code style="color : green"> Distribution of Column ‘calories’ when Column ‘average rating’ is Missing and not Missing </code>**
 
 <iframe src="assests/missingness1.html" width=800 height=600 frameBorder=0></iframe>
 
@@ -231,9 +231,9 @@ The distribution of the sodium when average rating is missing is different from 
 
 ### Observed Statistics
 
-We choose k-s as our test statistic.
+We choose **k-s** as our test statistic.
 
-### Distribution of Column ‘sodium’ when Column ‘average rating’ is Missing and not Missing
+**<code style="color : green"> Distribution of Column ‘sodium’ when Column ‘average rating’ is Missing and not Missing </code>**
 
 <iframe src="assests/missingness2.html" width=800 height=600 frameBorder=0></iframe>
 
