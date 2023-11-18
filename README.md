@@ -4,7 +4,7 @@ by Qianjin Zhou and Haohan Zou
 # Introduction
 Welcome to our exploration of food recipes and ratings, a fascinating collection of data that delves into the world of delicious food. Inspired by the relationship between user satisfaction and the nutrition factors of recipes, we have dived deep into the datasets and developed our research question on:
 
-<code style="color : Yellowgreen">What is the relationship between the amount of calories and average rating of recipes?</code>
+<code style="color : green">What is the relationship between the amount of calories and average rating of recipes?</code>
 
 Investigating this question can give us an idea regarding the impact of the amount of calories on peoples’ enjoyment of the food. By identifying a potential relationship between calories and rating for a recipe, we can possibly help food recipe creators, chefs, restaurant owners, etc. to make food that is more appealing and satisfactory.
 
@@ -245,7 +245,7 @@ After performing the k-s test, we found the p-value is approximately equal to 0.
 
 The question we would like to address is:
 
-<code style="color : Yellowgreen">What is the relationship between the amount of calories and average rating of recipes?</code>
+<code style="color : green">What is the relationship between the amount of calories and average rating of recipes?</code>
 
 
 ## Null Hypothesis:
