@@ -289,7 +289,7 @@ Our choice of test statistic is the correlation coefficient between variable **r
 We set alpha = 0.05
 
 ### P-values
-From our experiment, the p_value we received is around 0.078, which is greater than our significance level alpha = 0.05.
+From our experiment, the p_value we received is around 0.079, which is greater than our significance level alpha = 0.05.
 
 <iframe src="assests/hypothesis_test_plot.html" width=800 height=600 frameBorder=0></iframe>
 
