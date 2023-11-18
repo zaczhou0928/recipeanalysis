@@ -4,13 +4,71 @@
 by Qianjin Zhou and Haohan Zou
 
 # Introduction
-{:.no_toc}
+Welcome to our exploration of food recipes and ratings, a fascinating collection of data that delves into the world of delicious food. Inspired by the relationship between user satisfaction and the nutrition factors of recipes, we have dived deep into the datasets and developed our research question on:
 
-## Table of Contents
-{: .no_toc .text-delta }
+What is the relationship between the amount of calories and average rating of recipes?
 
-1. TOC
-{:toc}
+Investing this question can give us an idea regarding the impact of the amount of calories on peoples’ enjoyment of the food. By identifying a potential relationship between calories and rating for a recipe, we can possibly help food recipe creators, chefs, restaurant owners, etc. to make food that is more appealing and satisfactory.
+
+The data we are using is sourced from food.com, a website of user community that thrives in authentic food recipes that are shared by food enthusiasts all around the world. 
+
+The data is divided into two sets, each focused on recipes and ratings respectively. The recipe dataset contains information of recipe name, ID, preparation time, contributor ID, submission date, tags, nutrition information, number of steps, steps text, and description. Meanwhile, the rating dataset includes data of user ID, recipe ID, date of interaction, rating, and review text.
+
+After merging and cleaning, the dataset we will primarily use for the course of the research is a single dataframe that contains 83698 rows and 14 columns, with each row representing a recipe and its corresponding information. For the purpose of our analysis, we will mainly focus on the following columns.
+
+'id': The unique identifier of a recipe, formatted as a 6-digit int.
+‘average rating’: the average rating of a recipe.
+‘nutrition’: Nutrition information in the form [calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value” (For easier access to the data, we have splitted the data and created a column for each nutritional value, and we will mainly focus on the calories column.) 
+‘n_steps’: number of steps in recipe
+‘n_ingredients’: number of ingredients in recipe
+
+In the following parts, we will show the sections of Data Cleaning and EDA (Exploratory Data Analysis), Assessment of Missingness, and Hypothesis Testing.
+
+
+# Data Cleaning and EDA
+
+Data Cleaning Steps:
+
+Our data cleaning process was meticulous, ensuring the integrity of our analysis.
+
+Checking Data Type:
+
+First, we observe the data type of each column from the recipe dataset to understand the data.
+
+We also look at the data type of each column from the ratings dataset.
+
+Merging Dataset
+
+We left merged the recipes and ratings dataset together and filled all ratings of 0 in the rating dataset with np.nan. 
+
+Filling is a necessary step because through observing the website, we found that the minimum value for rating is 1. In this way, we recognized that 0 does not mean numerically a rating of 0 but that the reviewer simply didn’t provide a rating. Therefore, dropping those ratings of 0 can help us accurately calculate the average rating for each recipe in the later cleaning process.
+
+Assigning New Column
+
+We calculated the average rating for each recipe and assigned a new column to the original recipe dataset.
+
+Converting the Nutrition Column
+
+We find that the nutrition column contains several nutritional values in the format: ['calories', 'total fat (PDV)', 'sugar (PDV)', 'sodium (PDV)', 'protein (PDV)', 'saturated fat (PDV)', 'carbohydrates (PDV)']. We splitted the values in the nutrition column and assigned each resulting series of values with its own column. This improves the accessibility and readability of the dataframe.
+
+Dropping Columns
+
+After merging, ‘recipe_id’ and ‘id’ are duplicated, therefore we drop the ‘recipe_id’ column.
+
+Nutrition column is also dropped because it is no longer needed as we have extracted out each individual value and formed new columns.
+
+Finally we dropped other columns, 'name', 'contributor_id', 'submitted', 'tags', 'description', that are irrelevant for our analysis.
+
+
+Cleaning Outliers
+
+We found that there are some recipes containing significantly unusual values(more than 10,000 calories) for the amount of calories. Therefore, we drop the outliers(calories data that is greater than the 99.9 percentiles) in calories.
+
+Cleaning Result:
+
+
+Below is the head of our cleaned dataframe:
+
 
 ---
 
