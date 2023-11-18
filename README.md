@@ -83,19 +83,19 @@ We found that there are some recipes containing significantly unusual values(mor
 
 From the graph, we can conclude that the distribution of calories follows Gaussian distribution and is skewed right. We also conclude that the distribution centers around 300-400 calories, and most data is distributed in the range [0,1000]. Hence, we can say that most of the recipes contain less than or equal to 1000 calories.
 
-<iframe src="assests/histgram_avg_rating.html" width=1000 height=800 frameBorder=0></iframe>
+<iframe src="assests/histgram_avg_rating.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Distribution of Rating
 
 We also looked at the distribution of ratings, and found that ratings are concentrated between the range from (4 to 5), indicating that the average ratings of most recipes are very high.
 
-<iframe src="assests/histgram_calories.html" width=1000 height=800 frameBorder=0></iframe>
+<iframe src="assests/histgram_calories.html" width=800 height=600 frameBorder=0></iframe>
 
 ## Bivariate Analysis:
 
 We performed bivariate analysis by plotting the amount of calories against average rating.
 
-<iframe src="assests/scatter_plot_calories_rating.html" width=1000 height=800 frameBorder=0></iframe>
+<iframe src="assests/scatter_plot_calories_rating.html" width=800 height=600 frameBorder=0></iframe>
 
 
 From the plot, it seems that most recipes are clustered in the lower calorie range (close to 0 to around 2000 calories) and have a wide range of ratings, from 1 to 5. There is a dense concentration of points with ratings of 4 and above, indicating that many recipes with a lower calorie count have higher ratings.
@@ -108,7 +108,7 @@ The overall trend is not suggesting a clear positive or negative correlation bet
 
 We also categorized the amount of calories into 8 values ['0-1000', '1000-2000', '2000-3000', '3000-4000', '4000-5000', '5000-6000', '6000-7000', '7000-8000'], then we plotted a line of categorized amount of calories against average rating.
 
-<iframe src="assests/line_plot_avg_rating_cate_calories.html" width=1000 height=800 frameBorder=0></iframe>
+<iframe src="assests/line_plot_avg_rating_cate_calories.html" width=800 height=600 frameBorder=0></iframe>
 
 
 The result is very interesting and counterintuitive, we found that the average rating is fluctuating a lot around different categories, and there is a significant drop in rating at 4000-5000 and 5000-6000 calories. Afterward, there is a rise in rating at 6000-7000 and 7000-8000 calories. Indicating that high calories recipes are having a slightly higher average rating overall.
@@ -166,7 +166,7 @@ Observed Statistics: we choose k-s as our test statistic.
 
 ### Distribution of Column ‘calories’ when Column ‘average rating’ is Missing and not Missing
 
-<iframe src="assests/missingness1.html" width=1000 height=800 frameBorder=0></iframe>
+<iframe src="assests/missingness1.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Result Interpretation
 
@@ -188,7 +188,7 @@ We choose k-s as our test statistic.
 
 ### Distribution of Column ‘sodium’ when Column ‘average rating’ is Missing and not Missing
 
-<iframe src="assests/missingness2.html" width=1000 height=800 frameBorder=0></iframe>
+<iframe src="assests/missingness2.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Result Interpretation
 
@@ -224,7 +224,7 @@ From our experiment, the p_value we received is around 0.078.
 ### Justification
 In the hypothesis, we randomly shuffled the values in calories columns in order to do a permutation test. Each time, after we permuated the values of calories, we use 'corr' function from panda to calculate the correlation coefficient between variable ratings and variable calories. After iterating same procedures for 10000 times, we calculate the p_value stated above, and our experiment result fails to reject our null hypothesis.
 
-<iframe src="assests/hypothesis_test.html" width=1000 height=800 frameBorder=0></iframe>
+<iframe src="assests/hypothesis_test.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Conclusion
 
