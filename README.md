@@ -109,6 +109,10 @@ Finally we dropped other columns, 'name', 'contributor_id', 'submitted', 'tags',
 We found that there are some recipes containing significantly unusual values(more than 10,000 calories) for the amount of calories. Therefore, we drop the outliers(calories data that is greater than the 99.9 percentiles) in calories.
 
 ### Cleaning Result
+
+**Below is the head of our cleaned dataframe**:
+
+
 |    |     id |   minutes |   n_steps | ingredients                                                                                                                                                                                                                             |   n_ingredients |   rating |   calories |   total fat |   sugar |   sodium |   protein |   saturated fat |   carbohydrates |
 |---:|-------:|----------:|----------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------:|---------:|-----------:|------------:|--------:|---------:|----------:|----------------:|----------------:|
 |  0 | 333281 |        40 |        10 | ['bittersweet chocolate', 'unsalted butter', 'eggs', 'granulated sugar', 'unsweetened cocoa powder', 'vanilla extract', 'brewed espresso', 'kosher salt', 'all-purpose flour']                                                          |               9 |        4 |      138.4 |          10 |      50 |        3 |         3 |              19 |               6 |
@@ -118,14 +122,9 @@ We found that there are some recipes containing significantly unusual values(mor
 |  4 | 475785 |        90 |        17 | ['meatloaf mixture', 'unsmoked bacon', 'goat cheese', 'unsalted butter', 'eggs', 'baby spinach', 'yellow onion', 'red bell pepper', 'simply potatoes shredded hash browns', 'fresh garlic', 'kosher salt', 'white pepper', 'olive oil'] |              13 |        5 |      267   |          30 |      12 |       12 |        29 |              48 |               2 |
 
 
-**Below is the head of our cleaned dataframe**:
-
-
 ## Univariate Analysis:
 
 ### We examined the distribution of calories:
-
-
 
 From the graph, we can conclude that the distribution of calories follows Gaussian distribution and is skewed right. We also conclude that the distribution centers around 300-400 calories, and most data is distributed in the range [0,1000]. Hence, we can say that most of the recipes contain less than or equal to 1000 calories.
 
