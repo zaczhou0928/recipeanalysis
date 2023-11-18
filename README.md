@@ -4,7 +4,7 @@ by Qianjin Zhou and Haohan Zou
 # Introduction
 Welcome to our exploration of food recipes and ratings, a fascinating collection of data that delves into the world of delicious food. Inspired by the relationship between user satisfaction and the nutrition factors of recipes, we have dived deep into the datasets and developed our research question on:
 
-What is the relationship between the amount of calories and average rating of recipes?
+`What is the relationship between the amount of calories and average rating of recipes?`
 
 Investigating this question can give us an idea regarding the impact of the amount of calories on peoples’ enjoyment of the food. By identifying a potential relationship between calories and rating for a recipe, we can possibly help food recipe creators, chefs, restaurant owners, etc. to make food that is more appealing and satisfactory.
 
@@ -39,6 +39,7 @@ We also look at the data type of each column from the ratings dataset.
 
 We left merged the recipes and ratings dataset together and filled all ratings of 0 in the rating dataset with np.nan. 
 
+
 Filling is a necessary step because through observing the website, we found that the minimum value for rating is 1. In this way, we recognized that 0 does not mean numerically a rating of 0 but that the reviewer simply didn’t provide a rating. Therefore, dropping those ratings of 0 can help us accurately calculate the average rating for each recipe in the later cleaning process.
 
 ### Assigning New Column
@@ -72,15 +73,21 @@ We found that there are some recipes containing significantly unusual values(mor
 
 
 
-From the graph, we can conclude that the distribution of calories follows Gaussian distribution and is skewed right. We also conclude that the distribution centers around 300-400 calories, and most data is distributed in the range (0,1000]. Hence, we can say that most of the recipes contain less than or equal to 1000 calories.
+From the graph, we can conclude that the distribution of calories follows Gaussian distribution and is skewed right. We also conclude that the distribution centers around 300-400 calories, and most data is distributed in the range [0,1000]. Hence, we can say that most of the recipes contain less than or equal to 1000 calories.
+
+<iframe src="assests/histgram_avg_rating.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Distribution of Rating
 
 We also looked at the distribution of ratings, and found that ratings are concentrated between the range from (4 to 5), indicating that the average ratings of most recipes are very high.
 
+<iframe src="assests/histgram_calories.html" width=800 height=600 frameBorder=0></iframe>
+
 ## Bivariate Analysis:
 
 We performed bivariate analysis by plotting the amount of calories against average rating.
+
+<iframe src="assests/scatter_plot_calories_rating.html" width=800 height=600 frameBorder=0></iframe>
 
 
 From the plot, it seems that most recipes are clustered in the lower calorie range (close to 0 to around 2000 calories) and have a wide range of ratings, from 1 to 5. There is a dense concentration of points with ratings of 4 and above, indicating that many recipes with a lower calorie count have higher ratings.
@@ -91,8 +98,9 @@ The overall trend is not suggesting a clear positive or negative correlation bet
 
 
 
-
 We also categorized the amount of calories into 8 values ['0-1000', '1000-2000', '2000-3000', '3000-4000', '4000-5000', '5000-6000', '6000-7000', '7000-8000'], then we plotted a line of categorized amount of calories against average rating.
+
+<iframe src="assests/line_plot_avg_rating_cate_calories.html" width=800 height=600 frameBorder=0></iframe>
 
 
 The result is very interesting and counterintuitive, we found that the average rating is fluctuating a lot around different categories, and there is a significant drop in rating at 4000-5000 and 5000-6000 calories. Afterward, there is a rise in rating at 6000-7000 and 7000-8000 calories. Indicating that high calories recipes are having a slightly higher average rating overall.
@@ -143,7 +151,10 @@ Alternative hypothesis: the distribution of the calories when average rating is 
 
 Observed Statistics: we choose k-s as our test statistic.
 
+
 ### Distribution of Column ‘calories’ when Column ‘average rating’ is Missing and not Missing
+
+<iframe src="assests/missingness1.html.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Result Interpretation
 
@@ -165,6 +176,8 @@ We choose k-s as our test statistic.
 
 ### Distribution of Column ‘sodium’ when Column ‘average rating’ is Missing and not Missing
 
+<iframe src="assests/missingness2.html.html" width=800 height=600 frameBorder=0></iframe>
+
 ### Result Interpretation
 
 After performing the k-s test, we found the p-value is approximately equal to 0.113, which is higher than the p-value threshold of 0.05. Therefore, we determined that it is likely that the null hypothesis is true. We fail to reject the null hypothesis that average rating is not dependent on the amount of sodium. And the missingness of average rating is the MCAR. 
@@ -179,7 +192,7 @@ What is the relationship between the amount of calories and average rating of re
 
 ## Null Hypothesis:
 
-Our research question led us to the hypothesis that [State your Null
+Our research question led us to the hypothesis that State your Null
 
 ### Alternative Hypothesis
 
