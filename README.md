@@ -246,32 +246,33 @@ After performing the k-s test, we found the p-value is approximately equal to 0.
 
 The question we would like to address is:
 
-<code style="color : green">What is the relationship between the amount of calories and average rating of recipes?</code>
+**<code style="color : green"> From this dataframe, can we conclude a relationship, specifically linearly relationship, between the variable ratings and variable calories.</code>**
 
+Before we conduct the experiment, we will first drop the rows that containing null values in **rating** column.
 
 ## Null Hypothesis:
 
 Our research question led us to the hypothesis that:
-**There doesn't exists a linear relationship between variable ratings and variable calories.**
+**There doesn't exists a linear relationship between variable 'rating' and variable 'calories'.**
 
 ### Alternative Hypothesis
-**There exists a linear relationship between variable ratings and variable calories.**
+**There exists a linear relationship between variable 'rating' and variable 'calories'.**
 
 
 ### Test Statistic
 
-Our choice of test statistic is correlation coefficient since correlation coefficient measures the linear relationship between two variables.
+Our choice of test statistic is correlation coefficient between variable **rating** and variable **calories** since correlation coefficient measures the strength of linear relationship between two variables.
 
 ### Significance Level
-0.05
+We set $\alpha$ = 0.05
 
 ### P-values
-From our experiment, the p_value we received is around 0.078.
+From our experiment, the p_value we received is around 0.078, which is greater than our significance level $\alpha$ = 0.05
+
+<iframe src="assests/hypothesis_test.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Justification
 In the hypothesis, we randomly shuffled the values in calories columns in order to do a permutation test. Each time, after we permuated the values of calories, we use 'corr' function from panda to calculate the correlation coefficient between variable ratings and variable calories. After iterating same procedures for 10000 times, we calculate the p_value stated above, and our experiment result fails to reject our null hypothesis.
-
-<iframe src="assests/hypothesis_test.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Conclusion
 
