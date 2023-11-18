@@ -143,9 +143,10 @@ We also looked at the distribution of ratings, and found that ratings are concen
 
 * We performed bivariate analysis by plotting the amount of calories against average rating.
 
-<iframe src="assests/scatter_plot_calories_rating.html" width=800 height=600 frameBorder=0></iframe>
+    <iframe src="assests/scatter_plot_calories_rating.html" width=800 height=600 frameBorder=0></iframe>
+
     From the plot, it seems that most recipes are clustered in the lower calorie range (close to 0 to around 2000 calories) and have a wide range of ratings, from 1 to 5. There is a dense concentration of points with ratings of 4 and above, indicating that many recipes with a lower calorie count have higher ratings.
-    
+
     As the calorie count increases, the number of recipes decreases, which is evident from the fewer data points beyond 2000 calories. Interestingly, recipes with very high calorie counts (4000+) still maintain ratings mostly between 3 and 5, but there are much fewer of them.
 
     The overall trend is not suggesting a clear positive or negative correlation between the number of calories and the average rating. Therefore, further investigation and analysis are needed.
@@ -154,7 +155,7 @@ We also looked at the distribution of ratings, and found that ratings are concen
 
 * We also categorized the amount of calories into 8 values ['0-1000', '1000-2000', '2000-3000', '3000-4000', '4000-5000', '5000-6000', '6000-7000', '7000-8000'], then we plotted a line of categorized amount of calories against average rating.
 
-<iframe src="assests/line_plot_avg_rating_cate_calories.html" width=800 height=600 frameBorder=0></iframe>
+    <iframe src="assests/line_plot_avg_rating_cate_calories.html" width=800 height=600 frameBorder=0></iframe>
 
 
     The result is very interesting and counterintuitive, we found that the average rating is fluctuating a lot around different categories, and there is a significant drop in rating at 4000-5000 and 5000-6000 calories. Afterward, there is a rise in rating at 6000-7000 and 7000-8000 calories. Indicating that high calories recipes are having a slightly higher average rating overall.
