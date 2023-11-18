@@ -112,6 +112,24 @@ We found that there are some recipes containing significantly unusual values for
 
 ### Cleaning Result
 
+|   Columns      | Type   |
+|:---------------|:-------|
+| id             | int64  |
+| minutes        | int64  |
+| n_steps        | int64  |
+| steps          | object |
+| description    | object |
+| ingredients    | object |
+| n_ingredients  | int64  |
+| rating         | float64|
+|calories        | float64|
+|total fat       | float64|
+|sugar           | float64|
+|sodium          | float64|
+|protein         | float64|
+|saturated fat   | float64|
+|carbohydrates   | float64|
+
 **Below is the head of our cleaned dataframe**:
 
 
