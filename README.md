@@ -218,7 +218,7 @@ In our dataframe, we observed that some recipes do not have ratings, and we beli
 
 ## Missingness Dependency:
 
-Now, we will assess the missingness of **‘average rating’** in our dataframe. We will test the dependency of the missingness of **‘average rating’** on **‘calories’ and ‘sodium’**.
+Now, we will assess the missingness of **‘rating’** in our dataframe. We will test the dependency of the missingness of **‘rating’** on **‘calories’ and ‘sodium’**.
 
 ## Calories and Rating
 
@@ -229,7 +229,7 @@ Alternative hypothesis: the distribution of the calories when average rating is 
 Observed Statistics: we choose **k-s** as our test statistic.
 
 
-**<code style="color : green"> Distribution of Column ‘calories’ when Column ‘average rating’ is Missing and not Missing </code>**
+**<code style="color : green"> Distribution of Column ‘calories’ when Column ‘rating’ is Missing and not Missing </code>**
 
 <iframe src="assests/missingness1.html" width=800 height=600 frameBorder=0></iframe>
 
@@ -251,7 +251,7 @@ The distribution of the sodium when average rating is missing is different from 
 
 We choose **k-s** as our test statistic.
 
-**<code style="color : green"> Distribution of Column ‘sodium’ when Column ‘average rating’ is Missing and not Missing </code>**
+**<code style="color : green"> Distribution of Column ‘sodium’ when Column ‘rating’ is Missing and not Missing </code>**
 
 <iframe src="assests/missingness2.html" width=800 height=600 frameBorder=0></iframe>
 
