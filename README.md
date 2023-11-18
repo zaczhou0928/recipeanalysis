@@ -29,7 +29,10 @@ In the following parts, we will show the sections of Data Cleaning and EDA (Expl
 
 Our data cleaning process was meticulous, ensuring the integrity of our analysis.
 
+```
 print(pd.DataFrame(food.info()).to_markdown(index = False))
+```
+
 
 ### Checking Data Type
 
