@@ -112,6 +112,24 @@ We found that there are some recipes containing significantly unusual values for
 
 ### Cleaning Result
 
+|   Columns      | Type   |
+|:---------------|:-------|
+| id             | int64  |
+| minutes        | int64  |
+| n_steps        | int64  |
+| steps          | object |
+| description    | object |
+| ingredients    | object |
+| n_ingredients  | int64  |
+| rating         | float64|
+|calories        | float64|
+|total fat       | float64|
+|sugar           | float64|
+|sodium          | float64|
+|protein         | float64|
+|saturated fat   | float64|
+|carbohydrates   | float64|
+
 **Below is the head of our cleaned dataframe**:
 
 
@@ -186,7 +204,7 @@ For recipes with fewer than 10 ingredients, as the number of steps increases, so
 
 A similar trend is observed for recipes with 10-20 ingredients, starting from an average of approximately 477.63 calories for recipes with fewer than 20 steps, peaking at approximately 880.50 calories for recipes with 60 or more steps.
 
-For recipes with 20-30 ingredients, the calories start higher (approximately 617.00) for recipes with fewer than 20 steps and significantly jump for recipes with 60 or more steps (approximately 1699.82).
+For recipes with 20-30 ingredients, the calories start higher (approximately 617.70) for recipes with fewer than 20 steps and significantly jump for recipes with 60 or more steps (approximately 1699.82).
 
 The NaN (Not a Number) values indicate missing data, possibly because there are no recipes in the dataset that have 40-60 or more than 60 steps with 30 or more ingredients.
 
