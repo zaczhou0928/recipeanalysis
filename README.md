@@ -268,10 +268,10 @@ The Alternative Hypothesis is: **There exists a significant linear relationship 
 Our choice of test statistic is the correlation coefficient between variable **rating** and variable **calories** since correlation coefficient measures the strength of linear relationship between two variables.
 
 ### Significance Level
-We set $\alpha$ = 0.05
+We set alpha = 0.05
 
 ### P-values
-From our experiment, the p_value we received is around 0.078, which is greater than our significance level $\alpha$ = 0.05.
+From our experiment, the p_value we received is around 0.078, which is greater than our significance level alpha = 0.05.
 
 <iframe src="assests/hypothesis_test.html" width=800 height=600 frameBorder=0></iframe>
 
