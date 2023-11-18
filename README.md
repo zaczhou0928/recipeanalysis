@@ -214,7 +214,7 @@ Overall, this table suggests that there may be a general trend where recipes wit
 
 ## NMAR Analysis:
 
-In our dataframe, we observed that some recipes do not have ratings, and we believe that the missingness of “rating” is NMAR. This is because we believe that those recipes are just published so that no users have already tried it, thus there's no ratings about those recipes. To explain the missingness, we could possibly obtain information on user demographics. For example, if we could collect the the date of publication of those recipes, we might be able to conclude that new recipes are more likely to miss ratings from users.
+In our dataframe, we observed that some recipes do not have ratings, and we believe that the missingness of “rating” is NMAR. This is because we believe that those recipes are just published so that no users have already tried it, thus there's no ratings about those recipes. To explain the missingness, we could possibly obtain more information on user activities. For example, if we could collect the the date of publication of those recipes, we might be able to conclude that recipes with more recent date of publication are more likely to miss ratings from users.
 
 ## Missingness Dependency:
 
