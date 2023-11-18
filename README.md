@@ -300,8 +300,8 @@ As our observed statistics is not significantly far away from our test statistic
 
 * First, the relationship between ratings and calories might in other forms, for example, quadratic relation, logarithmic relation. Since at here we only examine the possibility of linear relationships, so it's possible for us to fail to reject null hypothesis.
 
-* In addition, we may explain this test result as people who ratings these recipes might have many other consideration, rather than mostly caring about the taste or satisfication of the recipe. They might consider the complexity, healthy, and many other factors when giving the ratings to the recipes.
+* In addition, the results of this test could indicate that individuals rating these recipes may take into account a variety of considerations beyond taste or satisfaction. Factors such as the complexity of the recipe, healthiness, and other attributes could play significant roles in their rating decisions.
 
 ### Conclusion
 
-As for the conclusion, we can state that we fail to reject the hypothesis there doesn't exist a linear relationship between **rating** and **calories** given the fact that the p value we received exceeds the significane level we set.
+As for the conclusion, we can state that we fail to reject the null hypothesis that there doesn't exist a linear relationship between **rating** and **calories** given the fact that the p value we received exceeds the significane level we set.
