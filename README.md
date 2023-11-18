@@ -27,23 +27,23 @@ In the following parts, we will show the sections of Data Cleaning and EDA (Expl
 
 # Data Cleaning and EDA
 
-## Data Cleaning Steps
+### Data Cleaning Steps
 
 Our data cleaning process was meticulous, ensuring the integrity of our analysis.
 
-## Checking Data Type
+### Checking Data Type
 
 First, we observe the data type of each column from the recipe dataset to understand the data.
 
 We also look at the data type of each column from the ratings dataset.
 
-## Merging Dataset
+### Merging Dataset
 
 We left merged the recipes and ratings dataset together and filled all ratings of 0 in the rating dataset with np.nan. 
 
 Filling is a necessary step because through observing the website, we found that the minimum value for rating is 1. In this way, we recognized that 0 does not mean numerically a rating of 0 but that the reviewer simply didn’t provide a rating. Therefore, dropping those ratings of 0 can help us accurately calculate the average rating for each recipe in the later cleaning process.
 
-## Assigning New Column
+### Assigning New Column
 
 We calculated the average rating for each recipe and assigned a new column to the original recipe dataset.
 
