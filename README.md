@@ -55,6 +55,7 @@ First, we observe the data type of each column from the recipe dataset to unders
 
 
 We also look at the data type of each column from the ratings dataset.
+
 |   Columns | Type   |
 |:----------|:-------|
 | user_id   | int64  |
