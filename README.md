@@ -172,12 +172,12 @@ We performed aggregate analysis to investigate the relationship between number o
 The columns categorize recipes based on the number of ingredients: fewer than 10, 10-20, 20-30, and 30 or more.
 The rows categorize recipes based on the number of steps in the recipe: fewer than 20, 20-40, 40-60, and 60 or more.
 
-|     <10 |   10-20 |    20-30 |   >=30 |
-|--------:|--------:|---------:|-------:|
-| 369.846 | 476.219 |  624.134 | 518.55 |
-| 505.313 | 626.355 |  716.679 | 820.6  |
-| 653.253 | 609.726 |  932.337 | nan    |
-| 806.33  | 942.835 | 2021.28  | nan    |
+| n_steps   |     <10 |   10-20 |    20-30 |   >=30 |
+|:----------|--------:|--------:|---------:|-------:|
+| <20       | 372.507 | 477.626 |  617.7   | 518.55 |
+| 20-40     | 515.642 | 624.954 |  720.486 | 820.6  |
+| 40-60     | 623.556 | 645.468 |  916.36  | nan    |
+| >=60      | 821.236 | 880.5   | 1699.82  | nan    |
 
 ## Observations
 
