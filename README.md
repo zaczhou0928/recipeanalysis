@@ -275,7 +275,8 @@ Our research question led us to the Null Hypothesis:
 
 ### Alternative Hypothesis
 
-The Alternative Hypothesis is: **There exists a significant linear relationship between variable 'rating' and variable 'calories'.**
+The Alternative Hypothesis is: 
+**There exists a statistically significant linear relationship between variable 'rating' and variable 'calories'.**
 
 **Before Hypothesis Test:** As mentioned in the above sections, some of them recipes has 0 ratings, and we have already explained that this 0 ratings are not caused by the bad performance of recipes themselves. Thus, before the test, we will first drop rows of recipes whose ratings are zero.
 
