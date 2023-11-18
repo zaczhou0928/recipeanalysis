@@ -4,7 +4,7 @@ by Qianjin Zhou and Haohan Zou
 # Introduction
 Welcome to our exploration of food recipes and ratings, a fascinating collection of data that delves into the world of delicious food. Inspired by the relationship between user satisfaction and the nutrition factors of recipes, we have dived deep into the datasets and developed our research question on:
 
-**What is the relationship between the amount of calories and average rating of recipes?**
+<code style="color : ">What is the relationship between the amount of calories and average rating of recipes?</code>
 
 Investigating this question can give us an idea regarding the impact of the amount of calories on peoples’ enjoyment of the food. By identifying a potential relationship between calories and rating for a recipe, we can possibly help food recipe creators, chefs, restaurant owners, etc. to make food that is more appealing and satisfactory.
 
@@ -14,10 +14,13 @@ The data is divided into two sets, each focused on recipes and ratings respectiv
 
 After merging and cleaning, the dataset we will primarily use for the course of the research is a single dataframe that contains 83698 rows and 14 columns, with each row representing a recipe and its corresponding information. For the purpose of our analysis, we will mainly focus on the following columns.
 
-'id': The unique identifier of a recipe, formatted as a 6-digit int.
-‘average rating’: the average rating of a recipe.
-‘nutrition’: Nutrition information in the form [calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value” (For easier access to the data, we have splitted the data and created a column for each nutritional value, and we will mainly focus on the calories column.) 
-‘n_steps’: number of steps in recipe
+1. **id:** The unique identifier of a recipe, formatted as a 6-digit int.
+
+2. **average rating:** the average rating of a recipe.
+
+3. **nutrition:** Nutrition information in the form **[calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]**. PDV stands for “percentage of daily value” (For easier access to the data, we have splitted the data and created a column for each nutritional value, and we will mainly focus on the calories column.) 
+
+4. **n_steps:** number of steps in recipe
 ‘n_ingredients’: number of ingredients in recipe
 
 In the following parts, we will show the sections of Data Cleaning and EDA (Exploratory Data Analysis), Assessment of Missingness, and Hypothesis Testing.
@@ -34,7 +37,31 @@ Our data cleaning process was meticulous, ensuring the integrity of our analysis
 
 First, we observe the data type of each column from the recipe dataset to understand the data.
 
+|   Columns      | Type   |
+|:---------------|:-------|
+| name           | object |
+| id             | int64  |
+| minutes        | int64  |
+| contributor_id | int64  |
+| submitted      | object |
+| tags           | object |
+| nutrition      | object |
+| n_steps        | int64  |
+| steps          | object |
+| description    | object |
+| ingredients    | object |
+| n_ingredients  | int64  |
+
+
+
 We also look at the data type of each column from the ratings dataset.
+|   Columns | Type   |
+|:----------|:-------|
+| user_id   | int64  |
+| recipe_id | int64  |
+| date      | object |
+| rating    | int64  |
+| review    | object |
 
 ### Merging Dataset
 
@@ -43,13 +70,31 @@ We left merged the recipes and ratings dataset together and filled all ratings o
 
 Filling is a necessary step because through observing the website, we found that the minimum value for rating is 1. In this way, we recognized that 0 does not mean numerically a rating of 0 but that the reviewer simply didn’t provide a rating. Therefore, dropping those ratings of 0 can help us accurately calculate the average rating for each recipe in the later cleaning process.
 
+Here's the information of missingness in the merged dataset:
+
+|     Columns    |  Type |
+|:---------------|-----:|
+| name           |    1 |
+| id             |    0 |
+| minutes        |    0 |
+| contributor_id |    0 |
+| submitted      |    0 |
+| tags           |    0 |
+| nutrition      |    0 |
+| n_steps        |    0 |
+| steps          |    0 |
+| description    |   70 |
+| ingredients    |    0 |
+| n_ingredients  |    0 |
+| rating         | 2609 |
+
 ### Assigning New Column
 
 We calculated the average rating for each recipe and assigned a new column to the original recipe dataset.
 
 ### Converting the Nutrition Column
 
-We find that the nutrition column contains several nutritional values in the format: ['calories', 'total fat (PDV)', 'sugar (PDV)', 'sodium (PDV)', 'protein (PDV)', 'saturated fat (PDV)', 'carbohydrates (PDV)']. We splitted the values in the nutrition column and assigned each resulting series of values with its own column. This improves the accessibility and readability of the dataframe.
+We find that the nutrition column contains several nutritional values in the format: **['calories', 'total fat (PDV)', 'sugar (PDV)', 'sodium (PDV)', 'protein (PDV)', 'saturated fat (PDV)', 'carbohydrates (PDV)']**. We splitted the values in the nutrition column and assigned each resulting series of values with its own column. This improves the accessibility and readability of the dataframe.
 
 ### Dropping Columns
 
@@ -57,24 +102,23 @@ After merging, ‘recipe_id’ and ‘id’ are duplicated, therefore we drop th
 
 Nutrition column is also dropped because it is no longer needed as we have extracted out each individual value and formed new columns.
 
-Finally we dropped other columns, 'name', 'contributor_id', 'submitted', 'tags', that are irrelevant for our analysis.
+Finally we dropped other columns, 'name', 'contributor_id', 'submitted', 'tags', 'describtion', and 'steps' that are irrelevant for our analysis.
 
 ### Cleaning Outliers
 
 We found that there are some recipes containing significantly unusual values(more than 10,000 calories) for the amount of calories. Therefore, we drop the outliers(calories data that is greater than the 99.9 percentiles) in calories.
 
 ### Cleaning Result
-
-
+|     id |   minutes |   n_steps | ingredients                                                                                                                                                                                                                             |   n_ingredients |   rating |   calories |   total fat |   sugar |   sodium |   protein |   saturated fat |   carbohydrates |
+|-------:|----------:|----------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------:|---------:|-----------:|------------:|--------:|---------:|----------:|----------------:|----------------:|
+| 333281 |        40 |        10 | ['bittersweet chocolate', 'unsalted butter', 'eggs', 'granulated sugar', 'unsweetened cocoa powder', 'vanilla extract', 'brewed espresso', 'kosher salt', 'all-purpose flour']                                                          |               9 |        4 |      138.4 |          10 |      50 |        3 |         3 |              19 |               6 |
+| 453467 |        45 |        12 | ['white sugar', 'brown sugar', 'salt', 'margarine', 'eggs', 'vanilla', 'water', 'all-purpose flour', 'whole wheat flour', 'baking soda', 'chocolate chips']                                                                             |              11 |        5 |      595.1 |          46 |     211 |       22 |        13 |              51 |              26 |
+| 306168 |        40 |         6 | ['frozen broccoli cuts', 'cream of chicken soup', 'sharp cheddar cheese', 'garlic powder', 'ground black pepper', 'salt', 'milk', 'soy sauce', 'french-fried onions']                                                                   |               9 |        5 |      194.8 |          20 |       6 |       32 |        22 |              36 |               3 |
+| 286009 |       120 |         7 | ['butter', 'sugar', 'eggs', 'all-purpose flour', 'whole milk', 'pure vanilla extract', 'almond extract']                                                                                                                                |               7 |        5 |      878.3 |          63 |     326 |       13 |        20 |             123 |              39 |
+| 475785 |        90 |        17 | ['meatloaf mixture', 'unsmoked bacon', 'goat cheese', 'unsalted butter', 'eggs', 'baby spinach', 'yellow onion', 'red bell pepper', 'simply potatoes shredded hash browns', 'fresh garlic', 'kosher salt', 'white pepper', 'olive oil'] |              13 |        5 |      267   |          30 |      12 |       12 |        29 |              48 |               2 |
 **Below is the head of our cleaned dataframe**:
 
-|     id |   minutes |   n_steps | steps                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | ingredients                                                                                                                                                                                                                                                                                                                                               |   n_ingredients |   rating |   calories |   total fat |   sugar |   sodium |   protein |   saturated fat |   carbohydrates | calories_category   |
-|-------:|----------:|----------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------:|---------:|-----------:|------------:|--------:|---------:|----------:|----------------:|----------------:|:--------------------|
-| 486161 |        60 |         7 | ['heat oil in a 4-quart dutch oven', 'add celery , onion , sweet pepper and garlic', 'cook for 5 minutes over medium heat', 'stir in ham , paprika , sugar , dry mustard , cumin , basil , oregano , thyme , cloves , black pepper and cayenne pepper', 'cook for 5 more minutes , stirring frequently', 'stir in black-eyed peas , hominy , undrained tomatoes , chicken broth , parsley and molasses', 'bring to boil , then reduce heat and cover dutch over and let soup simmer for 30 minutes']                                                                                                                                                                                                                                                                                                                                         | this is a delicious soup that i originally found on the better homes and gardens website, but i've seen it reprinted on a variety of other cooking and recipe sites.  i tried to research the background so i could accurately list its origin when posting this recipe.  but there doesn't seem to be any sort of consensus whether this soup is more accurately classified as a cajun or creole recipe. it seems to be one of those age-old questions that has no definite answer one way or the other, though most sites seem to agree that its roots are firmly planted in louisiana.  so, i'll leave it up to each individual to decide if this is cajun or creole. | ['celery', 'onion', 'green sweet pepper', 'garlic cloves', 'olive oil', 'cooked ham', 'paprika', 'sugar', 'dry mustard', 'ground cumin', 'dried basil', 'dried oregano', 'dried thyme', 'ground cloves', 'black pepper', 'cayenne pepper', 'black-eyed peas', 'yellow hominy', 'diced tomatoes', 'low sodium chicken broth', 'fresh parsley', 'molasses'] |              22 |        5 |      415.2 |          26 |      34 |       26 |        44 |              21 |              15 | 0-1000              |
-| 493372 |         5 |         1 | ['mix all ingredients together thoroughly']                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | this spice mix will make your taste buds dance!                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | ['paprika', 'salt', 'garlic powder', 'onion powder', 'dried basil', 'dried oregano', 'dried tarragon', 'dried thyme', 'powdered sugar', 'black pepper', 'cayenne pepper', 'red pepper flakes', 'celery seed']                                                                                                                                             |              13 |        5 |       14.8 |           0 |       2 |       58 |         1 |               0 |               1 | 0-1000              |
-| 308080 |        40 |         7 | ['in a bowl , combine the mashed yolks and mayonnaise', 'stir in the mustard', 'stir in the cajun seasoning and tabasco', 'taste , then season with salt and pepper', 'fill the whites evenly with the mixture', 'garnish with parsley', 'chill a few hours before serving']                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | deviled eggs, cajun-style                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | ['hard-cooked eggs', 'mayonnaise', 'dijon mustard', 'salt-free cajun seasoning', 'tabasco sauce', 'salt', 'black pepper', 'fresh italian parsley']                                                                                                                                                                                                        |               8 |        5 |       59.2 |           6 |       2 |        3 |         6 |               5 |               0 | 0-1000              |
-| 298512 |        29 |         9 | ['place melted butter in a large mixing bowl and add each remaining ingredient as listed , beating well after each addition to achieve a smooth dough', 'let dough stand uncovered 10 minutes', 'make golf-ball-sized shapes of the dough and insert a flat , wooden popsicle stick into one side of each ball', 'carefully flatten each ball of dough to a 1 / 2 inch thick patty', 'place 3 inches apart on greased baking sheets', 'bake at 400f for 6-8 minutes or til just browned around the edges , but still white on tops of cookies', 'remove from the oven and smear the top of each cookie generously with heated , canned , ready-to-spread frosting', 'frostings may be tinted with few drops food coloring once it has been heated', 'let cookies cool on baking sheet 10 minutes before carefully removing to paper towels'] | i've heard of the 'cookies by design' company, but have never tried their cookies. this recipe is supposed to be like theirs.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | ['butter', 'eagle brand condensed milk', 'light brown sugar', 'sour cream', 'egg', 'extract', 'nutmeg', 'self-rising flour', 'bisquick', 'wooden popsicle sticks']                                                                                                                                                                                        |              10 |        1 |      188   |          11 |      57 |       11 |         7 |              21 |               9 | 0-1000              |
-| 298509 |        20 |         5 | ['whip sugar and shortening in a large bowl , add eggs and beat well', 'add remaining ingredients and mix', 'knead dough into ball , roll out and cut', 'place on cookie sheet', 'bake at 350 degrees f for 10 to 12 minutes']                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | i've heard of the 'cookies by design' company, but have never tried their cookies. this is supposed to be a copy-cat of their sugar shortbread cookie.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | ['granulated sugar', 'shortening', 'eggs', 'flour', 'cream of tartar', 'baking soda', 'vanilla extract']                                                                                                                                                                                                                                                  |               7 |        3 |      174.9 |          14 |      33 |        4 |         4 |              11 |               6 | 0-1000              |
+
 ## Univariate Analysis:
 
 ### We examined the distribution of calories:
