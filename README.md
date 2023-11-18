@@ -64,6 +64,8 @@ We also look at the data type of each column from the ratings dataset.
 | rating    | int64  |
 | review    | object |
 
+
+
 ### Merging Dataset
 
 We left merged the recipes and ratings dataset together and filled all ratings of 0 in the rating dataset with np.nan. 
@@ -71,9 +73,11 @@ We left merged the recipes and ratings dataset together and filled all ratings o
 
 Filling is a necessary step because through observing the website, we found that the minimum value for rating is 1. In this way, we recognized that 0 does not mean numerically a rating of 0 but that the reviewer simply didn’t provide a rating. Therefore, dropping those ratings of 0 can help us accurately calculate the average rating for each recipe in the later cleaning process.
 
+Then, we calculated the average rating for each recipe and assigned a new column to the original recipe dataset, called **rating**.
+
 Here's the information of missingness in the merged dataset:
 
-|     Columns    |  Type |
+|     Columns    |# Missing|
 |:---------------|-----:|
 | name           |    1 |
 | id             |    0 |
@@ -89,9 +93,6 @@ Here's the information of missingness in the merged dataset:
 | n_ingredients  |    0 |
 | rating         | 2609 |
 
-### Assigning New Column
-
-We calculated the average rating for each recipe and assigned a new column to the original recipe dataset.
 
 ### Converting the Nutrition Column
 
@@ -99,15 +100,15 @@ We find that the nutrition column contains several nutritional values in the for
 
 ### Dropping Columns
 
-After merging, ‘recipe_id’ and ‘id’ are duplicated, therefore we drop the ‘recipe_id’ column.
+After merging, **'recipe_id'** and **'id'** are duplicated, therefore we drop the ‘recipe_id’ column.
 
 Nutrition column is also dropped because it is no longer needed as we have extracted out each individual value and formed new columns.
 
-Finally we dropped other columns, 'name', 'contributor_id', 'submitted', 'tags', 'describtion', and 'steps' that are irrelevant for our analysis.
+Finally we dropped other columns, **'name', 'contributor_id', 'submitted', 'tags', 'describtion', and 'steps'** that are irrelevant for our analysis.
 
 ### Cleaning Outliers
 
-We found that there are some recipes containing significantly unusual values(more than 10,000 calories) for the amount of calories. Therefore, we drop the outliers(calories data that is greater than the 99.9 percentiles) in calories.
+We found that there are some recipes containing significantly unusual values for the amount of calories and sodiums (Eg: more than 10,000 calories). Therefore, we drop the outliers (calories data that is greater than the **99.9 percentiles**) in calories.
 
 ### Cleaning Result
 
@@ -127,7 +128,7 @@ We found that there are some recipes containing significantly unusual values(mor
 
 ### Ddistribution of calories:
 
-We first examined the distribution of calories. From the graph, we can conclude that the distribution of calories follows Gaussian distribution and is skewed right. We also conclude that the distribution centers around 300-400 calories, and most data is distributed in the range [0,1000]. Hence, we can say that most of the recipes contain less than or equal to 1000 calories.
+We first examined the distribution of calories. From the graph, we can conclude that the distribution of calories is a little bit skewed right compared to Gaussian Distribution. We also conclude that the distribution centers around 300-400 calories, and most data is distributed in the range [0,1000]. Hence, we can say that most of the recipes contain less than or equal to 1000 calories.
 
 <iframe src="assests/histgram_calories.html" width=800 height=600 frameBorder=0></iframe>
 
@@ -140,7 +141,7 @@ We also looked at the distribution of ratings, and found that ratings are concen
 
 ## Bivariate Analysis:
 
-We performed bivariate analysis by plotting the amount of calories against average rating.
+* We performed bivariate analysis by plotting the amount of calories against average rating.
 
 <iframe src="assests/scatter_plot_calories_rating.html" width=800 height=600 frameBorder=0></iframe>
 
@@ -153,7 +154,7 @@ The overall trend is not suggesting a clear positive or negative correlation bet
 
 
 
-We also categorized the amount of calories into 8 values ['0-1000', '1000-2000', '2000-3000', '3000-4000', '4000-5000', '5000-6000', '6000-7000', '7000-8000'], then we plotted a line of categorized amount of calories against average rating.
+* We also categorized the amount of calories into 8 values ['0-1000', '1000-2000', '2000-3000', '3000-4000', '4000-5000', '5000-6000', '6000-7000', '7000-8000'], then we plotted a line of categorized amount of calories against average rating.
 
 <iframe src="assests/line_plot_avg_rating_cate_calories.html" width=800 height=600 frameBorder=0></iframe>
 
